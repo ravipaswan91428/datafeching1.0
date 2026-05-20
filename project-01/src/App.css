@@ -1,0 +1,55 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.app-container h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(120deg, #fbbf24 0%, #ec4899 25%, #8b5cf6 50%, #06b6d4 75%, #fbbf24 100%);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGlow 8s ease infinite;
+  margin-bottom: 0.75rem;
+  letter-spacing: -1.5px;
+  filter: drop-shadow(0 4px 20px rgba(236, 72, 153, 0.3));
+  text-align: center;
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 4px 20px rgba(236, 72, 153, 0.3));
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 4px 30px rgba(168, 85, 247, 0.4));
+  }
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+  .app-container h1 {
+    font-size: 2.3rem;
+  }
+
+  .user-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
